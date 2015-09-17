@@ -16,12 +16,12 @@ The following code snippet uses the BucketManager class to insert a Design Docum
         {
             var manager = bucket.CreateManager("Administrator", "");
             var designDoc = "{\"views\":{\"all_docs\":{\"map\":\"function (doc, meta) { emit(meta.id, doc); }\"}}}";
-            var result = manager.InsertDesignDocument("dd_docs", designDoc);
-            Assert.IsTrue(result.Success);
+            var result = await manager.InsertDesignDocumentAsync("dd_docs", designDoc);
+            Console.Writeline(result.Success);
         }
     }
 
-In the example above, first we create a Cluster object and pass in no configuration which means localhost will be used for the bootstrap URI. Then we create a CouchbaseBucket object using CreateBucket, since we left the name empty, the "default" bucket will be used. Finally, we create a BucketManager and call the InsertDesignDocument method passing the name of the Design Document and the Design document itself (containing the View definition) into the method.
+In the example above, first a Cluster object is created with no configuration which means localhost will be used for the bootstrap URI. Then a CouchbaseBucket object was opened using OpenBucket, since we left the name empty, the "default" bucket will be used. Finally, a BucketManager object is created and InsertDesignDocument method is called passing the name of the Design Document and the Design document itself (containing the View definition) into the method.
 
 ###Using the Console Manager###
 
