@@ -6,3 +6,4 @@ Content for .NET SDK documentation; this is not the official documentation which
 - [Query a View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/query-view.md)
 - [Delete a View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/delete-view.md)
 - [Query a Geo Spatial View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/query-geo-view.md)
+- [Using Prepared Statements](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/prepared-statements.md)
