@@ -9,4 +9,4 @@ Content for .NET SDK documentation; this is not the official documentation which
 - [Using Prepared Statements](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/prepared-statements.md)
 
 ##Durability Code Samples and Documentation##
-- [Durability overview](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/durability-overview.md)
+- [Durability overview](https://github.com/couchbaselabs/dotnet-documentation/blob/master/durability/durability-overview.md)
