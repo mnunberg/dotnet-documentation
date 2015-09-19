@@ -44,3 +44,22 @@ Note that there is a trade-off here; we are ensuring durability at the cost of p
 ###Reading from Replicas###
 For ensuring data can be read in the event of a failover, the Couchbase .NET SDK provides a method for performing replica reads: CouchbaseBucket.GetFromReplica. This method works as a sort of "fallback" if the request for the data on the primary fails. In order to use this method, replicas must be enabled for the cluster.
 
+    using (var cluster = new Cluster(ClientConfigUtil.GetConfiguration()))
+    {
+        using (var bucket = cluster.OpenBucket())
+        {
+            var result = await bucket.GetAsync<string>("foo");
+
+			//check result from primary
+            if (result.Status != ResponseStatus.Success && result.Status != ResponseStatus.KeyNotFound)
+            {
+				//check the replicas
+                result = await bucket.GetFromReplicaAsync<string>("foo");
+            }
+			if (result.Success)
+            {
+                //do something with result
+            }
+        }
+    }
+
