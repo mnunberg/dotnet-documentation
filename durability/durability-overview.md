@@ -63,3 +63,4 @@ For ensuring data can be read in the event of a failover, the Couchbase .NET SDK
         }
     }
 
+Reading from replicas is an example of the trade off between consistency and availability; we are fine reading from a replica even if the master copy is not the same. In many cases, this is acceptable behavior. For example, on a Web site which is content-driven usually the most important thing is ensuring that the user receives content regardless of it's revision. Additional, if consistency is important it can be resolved later perhaps when the user goes through checkout process of an e-commerce application.
