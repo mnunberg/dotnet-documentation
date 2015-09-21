@@ -16,12 +16,12 @@ To query this view, similar to a regular View, we will use query request object 
     {
         using (var bucket = cluster.OpenBucket("beer-sample"))
         {
-            var query = new SpatialViewQuery().From("beer", "points")
-                 .Bucket("beer-sample")
+            var query = new SpatialViewQuery().From("beer_ext_spatial", "points")
                  .Stale(StaleState.False)
-                 .BBox(-10.37109375, 33.578014746143985, 43.76953125, 71.9653876991313)
+                 .StartRange(-10.37109375, 33.578014746143985)
+                 .EndRange(43.76953125, 71.9653876991313)
                  .ConnectionTimeout(60000)
-                 .Limit(10)
+                 .Limit(1)
                  .Skip(0);
 
             var result = bucket.Query<dynamic>(query);
@@ -32,4 +32,4 @@ To query this view, similar to a regular View, we will use query request object 
         }
     }
 
-In this case, instead of specifying a range query, we are using a "bounded-box" which is an area defined by two latitudes. This example includes an area over Europe. 
+Here we are providing a start range between -10.37109375 and 33.578014746143985 and an end range between 43.76953125 and 71.96533876991313 which will return all breweries for an area over Europe. 
