@@ -9,7 +9,7 @@ From an application perspective, your major tools for handling fail over scenari
 For example, if you have a three node cluster, you may wish to set the number of replicas stored to be two and then on your writes providing the PersistTo and ReplicateTo values as two and two respectively. This will ensure that in order for the write to succeed, the given durability must be achieved by replicating the data to at least two nodes and that the data is persisted on at least two nodes as well. This concept is known as "observe". 
 
 ###Enhanced and CAS Durability###
-In Couchbase server 4.0 there are two ways of providing durability constraints: the older CAS based approach and the newer "enhanced durability" which uses a sequence number to ensure replication and persistence. From a developer perspective, thankfully, the "how" is abstracted away; you simply set property BucketConfiguration.UseEnhancedDurability to true. The default is "false" which means that CAS durability will be used.
+In Couchbase server 4.0 there are two ways of providing durability constraints: the older CAS based approach and the newer "enhanced durability" which uses a sequence number to ensure replication and persistence. The major difference between the two is that with CAS, durability is based upon the state of the data being observed itself. With enhanced durability, durability is based on the persisted or replicated state of the node using a sequence number. From a developer perspective, thankfully, the "how" is abstracted away; you simply set property BucketConfiguration.UseEnhancedDurability to true. The default is "false" which means that CAS durability will be used.
 
 Here is an example that uses enhanced durability (note that UseEnhancedDurability is true):
 
