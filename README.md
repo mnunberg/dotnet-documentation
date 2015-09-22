@@ -2,7 +2,7 @@
 Content for .NET SDK documentation; this is not the official documentation which lives on couchbase.com
 
 ##Query Code Samples and Documentation##
-- [Creating a View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/create-view.md)
+- [Creating a View](query/create-view.md)
 - [Querying a View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/query-view.md)
 - [Deleting a View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/delete-view.md)
 - [Querying a Geo Spatial View](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/query-geo-view.md)
