@@ -6,7 +6,7 @@ Content for .NET SDK documentation; this is not the official documentation which
 - [Querying a View](query/query-view.md)
 - [Deleting a View](query/delete-view.md)
 - [Querying a Geo Spatial View](query/query-geo-view.md)
-- [Using Prepared Statements](https://github.com/couchbaselabs/dotnet-documentation/blob/master/query/prepared-statements.md)
+- [Using Prepared Statements](query/prepared-statements.md)
 
 ##Durability Code Samples and Documentation##
 - [Durability overview](https://github.com/couchbaselabs/dotnet-documentation/blob/master/durability/durability-overview.md)
