@@ -11,3 +11,4 @@ Content for .NET SDK documentation; this is not the official documentation which
 ##Durability Code Samples and Documentation##
 - [Durability overview](https://github.com/couchbaselabs/dotnet-documentation/blob/master/durability/durability-overview.md)
 - [Enforcing optimistic concurrency with CAS](https://github.com/couchbaselabs/dotnet-documentation/blob/master/durability/durability-with-cas.md)
+- [Enforcing Document Lifetimes with TTL](https://github.com/couchbaselabs/dotnet-documentation/blob/master/durability/time-to-live.md)
