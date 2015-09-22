@@ -1,8 +1,8 @@
-##Geo Spatial View Queries##
-Geo Spatial Views are a new feature in Couchbase Server 4.0. With them it is possible to perform queries using two-dimensional geometries stored with fields in your documents. To perform Geo Spatial queries, the View REST API is used or more likely an SDK. Similar to how regular Views are queried, the Couchbase Server.NET SDK 2.2.0 provides a wrapper API around the REST API making it easy to compose and execute queries. Note that to use Geo spatial queries, you documents must follow the GeoJSON specification.
+##Geospatial View Queries##
+Geospatial Views are a new feature in Couchbase Server 4.0. With them it is possible to perform queries using two-dimensional geometries stored with fields in your documents. Like normal Views, Geospatial views can be queried either directly via the REST API or via an SDK (as is shown here). The Couchbase Server.NET SDK 2.2.0 provides a wrapper API around the REST API making it easy to compose and execute queries.
 
 ###Querying the "points" Spatial View###
-In the beer-sample Sample data bucket, you can create a Map function that emits a "Point" type document from the "Brewery" documents and contains the latitude and longitude field called "coordinates":
+In the beer-sample Sample data bucket, you can create a Map function that emits a `Point` type from the "Brewery" documents which contains the latitude and longitude field called `coordinates`:
 
     function (doc) {
 	    if (doc.type == "brewery" && doc.geo.lon && doc.geo.lat) {
@@ -10,7 +10,7 @@ In the beer-sample Sample data bucket, you can create a Map function that emits 
     	}
     }
 
-To query this view, similar to a regular View, we will use query request object which exposes the REST API's parameters as a fluent interface called SpatialViewQuery. Here is an example of using this class to construct a query which we execute against the bucket:
+To query this view, similar to a regular View, we will use the `SpatialViewQuery` object which exposes the REST API's parameters as a fluent interface. Here is an example of using this class to construct a query which we execute against the bucket:
 
     using (var cluster = new Cluster(ClientConfigUtil.GetConfiguration()))
     {
@@ -32,4 +32,4 @@ To query this view, similar to a regular View, we will use query request object 
         }
     }
 
-Here we are providing a start range between -10.37109375 and 33.578014746143985 and an end range between 43.76953125 and 71.96533876991313 which will return all breweries for an area over Europe. 
+Here we are providing a start range between `-10.37109375` and `33.578014746143985` and an end range between `43.76953125` and `71.96533876991313` which will return all breweries for an area over Europe. 
